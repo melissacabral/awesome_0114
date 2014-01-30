@@ -50,6 +50,51 @@ function awesome_setup_menus(){
 	) );
 }
 
+/**
+ * Add 4 Widget Areas
+ * @since 0.1
+ */
+add_action( 'widgets_init', 'awesome_register_sidebars' );
+function awesome_register_sidebars(){
+	register_sidebar( array(
+		'name' 			=> 'Blog Sidebar',
+		'id' 			=> 'blog_sidebar',
+		'description' 	=> 'Complementary content next to the blog archives',
+		'before_widget' => '<section class="widget clearfix %2$s" id="%1$s">',
+		'after_widget' 	=> '</section>',
+		'before_title' 	=> '<h3 class="widget-title">',
+		'after_title' 	=> '</h3>', 
+	) );
+	register_sidebar( array(
+		'name' 			=> 'Home Area',
+		'id' 			=> 'home_area',
+		'description' 	=> 'Appears near the bottom of the home page',
+		'before_widget' => '<section class="widget clearfix %2$s" id="%1$s">',
+		'after_widget' 	=> '</section>',
+		'before_title' 	=> '<h3 class="widget-title">',
+		'after_title' 	=> '</h3>', 
+	) );
+	register_sidebar( array(
+		'name' 			=> 'Page Sidebar',
+		'id' 			=> 'page_sidebar',
+		'description' 	=> 'Complementary content next to Page content',
+		'before_widget' => '<section class="widget clearfix %2$s" id="%1$s">',
+		'after_widget' 	=> '</section>',
+		'before_title' 	=> '<h3 class="widget-title">',
+		'after_title' 	=> '</h3>', 
+	) );
+	register_sidebar( array(
+		'name' 			=> 'Footer Area',
+		'id' 			=> 'footer_area',
+		'description' 	=> 'Appears at the bottom of every screen',
+		'before_widget' => '<section class="widget clearfix %2$s" id="%1$s">',
+		'after_widget' 	=> '</section>',
+		'before_title' 	=> '<h3 class="widget-title">',
+		'after_title' 	=> '</h3>', 
+	) );
+}
+
+
 
 
 //don't close the PHP tag!

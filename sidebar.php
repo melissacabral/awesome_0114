@@ -1,4 +1,9 @@
 <aside id="sidebar"> 
+	<?php 
+	//if the 'Blog Sidebar' widget area exists (functions.php), show it, otherwise show alternative content
+	if( ! dynamic_sidebar('Blog Sidebar') ): ?>
+
+		<!-- ALTERNATIVE CONTENT! -->
 		<section id="categories" class="widget">
 			<h3 class="widget-title">Popular Categories </h3>
 			<ul>
@@ -42,4 +47,5 @@
 			<?php endif; ?>
 			</ul>
 		</section>
-	</aside><!-- end #sidebar -->
+	<?php endif; //dynamic sidebar  ?>
+</aside><!-- end #sidebar -->
