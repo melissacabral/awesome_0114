@@ -40,6 +40,10 @@
 
 		<?php endwhile; ?>
 
+		<?php 
+		//loads comments.php and separates comments 
+		comments_template('/comments.php', true); ?>
+
 		<div class="pagination">
 			<?php 
 			//single post pagination - go to the next/prev post			
