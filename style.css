@@ -1,39 +1,34 @@
 /*
-Theme Name: Awesome Co fall 2013
+Theme Name: Awesome Co redesign
 Theme URI: http://melissacabral.com/
-Description: A theme for learning!
+Description: A barebones theme for learning!
 Author: melissa cabral
 Author URI: http://melissacabral.com
 Version: 1.0
-License: GPLv2 
+Tags: light, two-columns, custom-background, custom-menu
+
+
+License: GPLv3 
 License URI: license.txt
 
 ------------------------------
 	Table of Contents
 ------------------------------
-==Basic Links
-==Layout blocks
-==Navigation Top Bar
-==Search Bar (top)
-==utilities (top) 
-==Breadcrumbs
-==pagination
-==Search Form
-==comment form
-==comments list
-==sidebar and widget typography and layout
-==post typography 
-==blockquotes 
-==Gallery
-==Forms
-==tables
-==Lists
-==misc tags
-==Calendar Widget
-==custom post type - products 
-==Products Widget  
+1. ==Basic Links
+2. ==Layout Blocks
+4. ==Navigation
+5. ==Utilities Menu
+6. ==Pagination
+7. ==Search Form
+8. ==Comments
+9. ==Sidebar
+10.==Post Typography
+11.==Custom Post Formats
+12.==Forms
+13.==Tables
+14.==Lists
+15.==Misc tags
 */
-
 
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700);
 /* 
@@ -59,7 +54,7 @@ a:focus {
 */
 body {
 	font-size:100%;
-	line-height:1.125em; /* 16×1.125=18 */
+	line-height:1.125em; /* 16Ã—1.125=18 */
 
 	font-family: 'Source Sans Pro', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 	color:#fff;
@@ -72,13 +67,10 @@ body {
 }
 #content {
 	width:66.5%;
-	clear: both;
 	float:left;
 	word-wrap:break-word;
 }
-
 .home #content,
-.home #sidebar,
 .page-template-template-no-sidebar-php #content,
 .page-template-template-sitemap-php #content{
 	width:100%;
@@ -88,7 +80,11 @@ body {
 	width:31%;
 	float:right;
 }
-
+.home #sidebar {
+	width:100%;
+	clear:both;
+	float:none;
+}
 footer#colophon {
 	clear:both;
 
@@ -129,7 +125,6 @@ header[role=banner] .top-bar nav{
 	margin:0;
 	padding:0;
 	max-height:79px;
-	overflow: hidden;
 }
 
 header nav ul li {
@@ -203,7 +198,7 @@ header nav ul li .children li a  {
 }
 
 /*
-==Search Bar (top)
+== Search Bar (top)
 */
 header[role=banner] #searchform{
 	position: absolute;
@@ -362,7 +357,10 @@ header[role=banner] #searchform{
 	border-radius: 0px 4px 4px 0px;
 }
 /*
-==comment form	
+
+==comment form
+
+	
 */
 .form-allowed-tags {
 	font-size:.875em;
@@ -417,7 +415,9 @@ header[role=banner] #searchform{
 	margin-top:3em;
 }
 /*
+
 ==comments list
+
 */
 .hentry .commentlist {
 	margin:0;
@@ -534,6 +534,9 @@ header[role=banner] #searchform{
 	list-style-type:none;
 }
 
+.home #sidebar .widget{
+	max-height:420px;
+}
 
 
 .widget ul li {
@@ -544,7 +547,28 @@ header[role=banner] #searchform{
 	margin-bottom:5px;
 	font-size:.875em; /* 14 px */
 }
-
+#sidebar #tags {
+	line-height:18px;
+}
+#sidebar #tags li {
+	display:inline-block;
+	background-image:none;
+	padding:0;
+}
+#sidebar #tags a {
+	display:inline-block;
+	text-decoration:none;
+	color:white;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	padding:1px 6px;
+	background-color:#dedede;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	font-size:12px !important;
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, .2);
+}
 
 footer#colophon .widget-container {
 	padding:1.5em 0;
@@ -589,14 +613,8 @@ footer#colophon .widget ul li {
 	color:#6B5E54;
 	overflow: hidden;
 	margin:0 0 7% 5%;
+	
 	background-color: #fff;
-}
-.home #sidebar .widget{
-	width:31.1%;
-	float:left;
-	margin: 2% 2% 4% 0;
-	max-height: 30em;
-	overflow:hidden;
 }
 #sidebar .widget-title {
 	font-size:1.25em; /* 20 px */
@@ -608,7 +626,11 @@ footer#colophon .widget ul li {
 #sidebar .widget ul li{
 	padding:0;
 }
-
+.home #sidebar .widget{
+	width:31.3%;
+	float:left;
+	margin:1% 2% 1% 0;
+}
 #sidebar .widget>*{
 	padding:1em;
 }
@@ -721,6 +743,7 @@ footer#colophon .widget ul li {
 	background-image:url(images/bullet_mail.png);
 }
 /*
+
 ==post typography 
 */
 .hentry {
@@ -790,10 +813,40 @@ footer#colophon .widget ul li {
 	position:relative;
 
 }
-/*
-TODO: Add required WP styles
-http://codex.wordpress.org/CSS
-*/
+.hentry .alignleft {
+	float:left;
+	margin-left:0px;
+	margin-right:1em;
+}
+.hentry .alignright {
+	float:right;
+	margin-right:0px;
+	margin-left: 1em;
+}
+.hentry .aligncenter {
+	margin:0 auto;
+	display:block;
+}
+.hentry .alignnone {
+	margin:0;
+}
+.wp-caption {
+	text-align:center;
+	background-color: rgba(0,0,0,.1);
+	margin-bottom: 1em;
+
+	padding:6px;
+	
+}
+.wp-caption-text {
+	font-style:italic;
+	color:#999;
+	margin:0;
+}
+.wp-caption img {
+	margin:0 ;
+	padding:0;
+}
 .onethird {
 	width:32%;
 	float:left;
@@ -894,9 +947,11 @@ img {
 	background-repeat:no-repeat;
 	padding-left:35px;
 }
-
+/*
+ ==Custom Post formats 
+ */
 /* 
-==blockquotes
+==QUOTE 
 */
 blockquote {
 	clear:both;
@@ -938,7 +993,7 @@ blockquote blockquote {
 }
 .format-quote, blockquote{
 	background-color: rgba(255,255,255,.1);
-	quotes: "“" "”" "‘" "’";
+	quotes: "â€œ" "â€" "â€˜" "â€™";
 	margin:3em 0;
 	padding:1.5em 1em 1em 1em ;
 	position: relative;
@@ -1204,7 +1259,7 @@ RSS Feed Image
 
 
 /*
-==Calendar Widget
+== Calendar Widget
 */
 #sidebar #wp-calendar caption{
 	padding-top:105px;
@@ -1252,7 +1307,7 @@ RSS Feed Image
 }
 
 /* 
-==custom post type - products 
+== custom post type - PRODUCTS 
 */
 .archive-title{
 	margin:0px 0 20px;
@@ -1432,9 +1487,7 @@ body.single-product .post-meta span{
 	margin:0;
 }
 
-/*
-==Products Widget  
-*/
+/** ==Products Widget Additions **/
 #featured-content{
 	margin:2em 0;
 }
