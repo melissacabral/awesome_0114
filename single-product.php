@@ -27,7 +27,12 @@
 					echo 'Price: ' . $price . '<br>';
 
 				if($size)
-					echo 'Price: ' . $size . '<br>';
+					echo 'Size: ' . $size . '<br>';
+
+				//show the brand and features taxonomy terms for this product
+				the_terms( $post->ID, 'brand', '<p>Brand: ', '<br />', '</p>' );
+
+				the_terms( $post->ID, 'feature', '<p>Features: ', ', ', '</p>' );
 
  
 				the_content(); 
